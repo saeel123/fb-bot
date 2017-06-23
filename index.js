@@ -121,23 +121,13 @@ function processMessage(event) {
 
 						if (formattedMsg === "hi" ) {
 							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, {text: "Hi "+ res + ",How I can Help you?"});
+								sendMessage(senderId, {text: "Hi "+ res + ",please enter pin code, ill tell you address?"});
 							});
 
 						} else {
               //sendMessage(senderId, {text: "find Pincode"});
 
-            
-
-              if ('!/^([0-9](6,6)+$/'.test(formattedMsg))  {
-                  sendMessage(senderId, {text: "please enter valid pincode"});
-                  return false;
-              }
-
-
               Pincode.findByPincode(formattedMsg, function (err, address) {
-
-                console.log(address);
 
 								if (err) {
 									sendMessage(senderId, {text: "error occured while search"});
