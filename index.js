@@ -2,6 +2,9 @@ var express = require("express");
 var request = require("request");
 var bodyParser = require("body-parser");
 
+var Pincode = require('./models/pincode');
+
+
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -115,13 +118,43 @@ function processMessage(event) {
 						var formattedMsg = message.text.toLowerCase().trim();
 
 						if (formattedMsg === "hi" ) {
-
 							getMessengerName(senderId, function (res) {
 								sendMessage(senderId, {text: "Hi "+ res + ",How I can Help you?"});
 							});
 
 						} else {
-              sendMessage(senderId, {text: "Search in the db address of pincode"});
+              sendMessage(senderId, {text: "find Pincode"});
+
+
+              // Pincode.findByPincode(formattedMsg, function (err, address) {
+              //
+							// 	if (err) {
+							// 		sendMessage(senderId, {text: "error occured while search"});
+							// 	} else if (address === null){
+              //
+              //     //save the requested pincode in db
+							// 		let newPincode = new Pincode({
+							// 			pincode: formattedMsg
+							// 		});
+              //
+							// 		Pincode.addPincode(newPincode, function (newPincode, err) {
+							// 			if (!err) {
+							// 				sendMessage(senderId, {text: "we will get back to you soon"});
+							// 			} else {
+							// 				sendMessage(senderId, {text: "We dint get what you want to say..."});
+							// 			}
+							// 		});
+							// 	} else {
+              //     //requested pincode is already there but no address
+							// 		//sendMessage(senderId, {text: question['question']});
+							// 		if (!question['address']) {
+							// 			sendMessage(senderId, {text: "pincode address not found in db"});
+							// 		} else {
+							// 			sendMessage(senderId, {text: question['address']});
+							// 		}
+							// 	}
+							// });
+
 						}
         } else if (message.attachments) {
             sendMessage(senderId, {text: "Sorry, I don't understand your request."});
@@ -130,17 +163,17 @@ function processMessage(event) {
 }
 
 
-// function getQuestionAnswer(userId, question) {
-//
-//     Question.findByQuestion(question, function(err, question) {
-//         if(err) {
-//             sendMessage(userId, {text: "Something went wrong. Try again"});
-//         } else {
-//             sendMessage(userId, {text: question});
-//         }
-//     });
-//
-// }
+function getPincodeAddress(userId, pincode) {
+
+    Pincode.findByPincode(pincode, function(err, address) {
+        if(err) {
+            sendMessage(userId, {text: "Something went wrong. Try again"});
+        } else {
+            sendMessage(userId, {text: address});
+        }
+    });
+
+}
 
 // sends message to user
 function sendMessage(recipientId, message) {
