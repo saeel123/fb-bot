@@ -142,7 +142,7 @@ function processMessage(event) {
 										if (!err) {
 											sendMessage(senderId, {text: "some error occured while proccesing your request"});
 										} else {
-											sendMessage(senderId, {text: "we dint find that pin in our db. we proccsed your request"});
+											sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
 										}
 									});
 								} else {
