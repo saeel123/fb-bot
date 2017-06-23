@@ -130,6 +130,8 @@ function processMessage(event) {
 
               Pincode.findByPincode(formattedMsg, function (err, address) {
 
+                console.log(address);
+
 								if (err) {
 									sendMessage(senderId, {text: "error occured while search"});
 								} else if (address === null){
