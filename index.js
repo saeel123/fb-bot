@@ -127,6 +127,13 @@ function processMessage(event) {
 						} else {
               //sendMessage(senderId, {text: "find Pincode"});
 
+              var pat1= "/^([0-9](6,6)+$/";
+
+              if (!pat1.test(formattedMsg))  {
+                  sendMessage(senderId, {text: "please enter valid pincode"});
+                  return false;
+              }
+
 
               Pincode.findByPincode(formattedMsg, function (err, address) {
 
