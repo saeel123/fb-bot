@@ -3,7 +3,7 @@ var request = require("request");
 var bodyParser = require("body-parser");
 
 var Pincode = require('./models/pincode');
-
+var db = mongoose.connect(process.env.MONGODB_URI);
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
