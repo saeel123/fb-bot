@@ -1,6 +1,9 @@
 const express = require("express");
 const request = require("request");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const PORT = process.env.PORT || 5000;
+
 
 const db = mongoose.connect(process.env.MONGODB_URI);
 const Pincode = require('./models/pincode');
