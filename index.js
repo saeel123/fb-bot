@@ -143,16 +143,16 @@ function processMessage(event) {
 
 									Pincode.addPincode(newPincode, function (newPincode, err) {
 										if (!err) {
-											sendMessage(senderId, {text: "we will get back to you soon"});
+											sendMessage(senderId, {text: "some error occured while proccesing your request"});
 										} else {
-											sendMessage(senderId, {text: "We dint get what you want to say..."});
+											sendMessage(senderId, {text: "we dint find that pin in our db. we proccsed your request"});
 										}
 									});
 								} else {
                   //requested pincode is already there but no address
 									//sendMessage(senderId, {text: question['question']});
 									if (!address['address']) {
-										sendMessage(senderId, {text: "pincode address not found in db"});
+										sendMessage(senderId, {text: "we dont have address for this pin in our db"});
 									} else {
 										sendMessage(senderId, {text: address['address']});
 									}
