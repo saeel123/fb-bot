@@ -149,10 +149,10 @@ function processMessage(event) {
 								} else {
                   //requested pincode is already there but no address
 									//sendMessage(senderId, {text: question['question']});
-									if (!question['address']) {
+									if (!address['address']) {
 										sendMessage(senderId, {text: "pincode address not found in db"});
 									} else {
-										sendMessage(senderId, {text: question['address']});
+										sendMessage(senderId, {text: address['address']});
 									}
 								}
 							});
