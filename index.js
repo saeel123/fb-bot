@@ -185,13 +185,15 @@ function sendMessage(recipientId, message) {
         json: {
             recipient: {id: recipientId},
             message: {
-              "quick_replies": [
-            {
-                "content_type":"text",
-                "title": "Next Image",
-                "payload": "YOUR_DEFINED_PAYLOAD_FOR_NEXT_IMAGE"
-            }
-        ]
+              "quick_replies":[
+{"content_type":"text",
+"title":"title1",
+"payload":"SUPPLEMENT_1"},
+{"content_type":"text",
+"title":"title2",
+"payload":"PAYLOAD_1"
+}
+]
             },
         }
     }, function(error, response, body) {
