@@ -14,5 +14,5 @@ module.exports.findByPincode = function (pincode, callback) {
 }
 
 module.exports.addPincode = function (newPincode, callback) {
-      newPincode.save(callback);
+      newPincod.save(callback);
 }

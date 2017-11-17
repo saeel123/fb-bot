@@ -121,7 +121,7 @@ function processMessage(event) {
 
 						if (formattedMsg === "hi" ) {
 							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, {text: "Hi "+ res + ",please enter pin code, ill tell you address?"});
+								sendMessage(senderId, {text: "Hi "+ res + ",Welcome to Yuva Goa"});
 							});
 
 						} else {
