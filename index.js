@@ -184,7 +184,11 @@ function sendMessage(recipientId, message) {
         method: "POST",
         json: {
             recipient: {id: recipientId},
-            message: message,
+            quick_replies:[
+      {
+        "content_type":"text",
+        "title":"test"
+      }]
         }
     }, function(error, response, body) {
         if (error) {
