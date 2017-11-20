@@ -186,8 +186,8 @@ let me = {
                       "payload": "hi"
                   },
                   {
-                      "content_type": "text",
-                      "title": "Career",
+                      "content_type": "403517",
+                      "title": "403517",
                       "payload": "403517"
                   }
               ]
