@@ -176,6 +176,24 @@ function getPincodeAddress(userId, pincode) {
 
 }
 
+
+let me = {
+              "quick_replies": [
+                  {
+                      "content_type": "text",
+                      "title": "Weather",
+                      "payload": "Weather"
+                  },
+                  {
+                      "content_type": "text",
+                      "title": "Forecast",
+                      "payload": "Forecast"
+                  }
+              ]
+            };
+
+
+
 // sends message to user
 function sendMessage(recipientId, message) {
     request({
@@ -184,7 +202,7 @@ function sendMessage(recipientId, message) {
         method: "POST",
         json: {
             recipient: {id: recipientId},
-            message: message,
+            message: me,
         }
     }, function(error, response, body) {
         if (error) {
