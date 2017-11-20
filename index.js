@@ -178,7 +178,7 @@ function getPincodeAddress(userId, pincode) {
 
 
 let me = {
-              text: "Something went wrong. Try again",
+              text: "Hi How I can help you Manisha",
               quick_replies: [
                   {
                       "content_type": "text",
