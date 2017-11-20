@@ -113,6 +113,22 @@ function processMessage(event) {
         var message = event.message;
         var senderId = event.sender.id;
 
+        let me = {
+                      text: "Hi, How we can help you?",
+                      quick_replies: [
+                          {
+                              "content_type": "text",
+                              "title": "Bussiness",
+                              "payload": "hi"
+                          },
+                          {
+                              "content_type": "text",
+                              "title": "403517",
+                              "payload": "403517"
+                          }
+                      ]
+                    };
+
         console.log("Received message from senderId: " + senderId);
         console.log("Message is: " + JSON.stringify(message));
 
@@ -121,7 +137,7 @@ function processMessage(event) {
 
 						if (formattedMsg === "hi" ) {
 							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, {text: "Hi "+ res + ",Welcome to Yuva Goa"});
+								sendMessage(senderId, me);
 							});
 
 						} else {
@@ -177,21 +193,7 @@ function getPincodeAddress(userId, pincode) {
 }
 
 
-let me = {
-              text: "Hi, How we can help you?",
-              quick_replies: [
-                  {
-                      "content_type": "text",
-                      "title": "Bussiness",
-                      "payload": "hi"
-                  },
-                  {
-                      "content_type": "403517",
-                      "title": "403517",
-                      "payload": "403517"
-                  }
-              ]
-            };
+
 
 
 
@@ -203,7 +205,7 @@ function sendMessage(recipientId, message) {
         method: "POST",
         json: {
             recipient: {id: recipientId},
-            message: me,
+            message: message,
         }
     }, function(error, response, body) {
         if (error) {
