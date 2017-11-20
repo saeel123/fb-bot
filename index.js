@@ -178,7 +178,8 @@ function getPincodeAddress(userId, pincode) {
 
 
 let me = {
-              "quick_replies": [
+              text: "Something went wrong. Try again",
+              quick_replies: [
                   {
                       "content_type": "text",
                       "title": "Weather",
