@@ -178,17 +178,17 @@ function getPincodeAddress(userId, pincode) {
 
 
 let me = {
-              text: "Hi How I can help you Manisha",
+              text: "Hi, How we can help you?",
               quick_replies: [
                   {
                       "content_type": "text",
-                      "title": "Weather",
-                      "payload": "Weather"
+                      "title": "Bussiness",
+                      "payload": "Bussiness"
                   },
                   {
                       "content_type": "text",
-                      "title": "Forecast",
-                      "payload": "Forecast"
+                      "title": "Career",
+                      "payload": "Career"
                   }
               ]
             };
