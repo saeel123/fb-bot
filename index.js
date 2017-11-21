@@ -119,12 +119,14 @@ function processMessage(event) {
                           {
                               "content_type": "text",
                               "title": "Bussiness",
-                              "payload": "hi"
+                              "payload": "hi",
+                              "url":"http://www.careers.helixtech.co"
                           },
                           {
                               "content_type": "text",
                               "title": "403517",
-                              "payload": "403517"
+                              "payload": "403517",
+                              "url":"http://www.careers.helixtech.co"
                           }
                       ]
                     };
