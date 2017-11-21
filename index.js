@@ -146,6 +146,17 @@ function processMessage(event) {
 							});
 
 						} else {
+
+              if (formattedMsg === "bussiness") {
+                sendMessage(senderId, {text: "Bussiness information"});
+              } else if (formattedMsg === "careers") {
+                sendMessage(senderId, {text: "Careers information"});
+              } else if (formattedMsg === "browse") {
+                sendMessage(senderId, {text: "Browse information"});
+              } else {
+                sendMessage(senderId, {text: "We will get back to you"});
+              }
+
               //sendMessage(senderId, {text: "find Pincode"});
 
             //   switch(formattedMsg)
@@ -173,34 +184,34 @@ function processMessage(event) {
             //   }
             // }
 
-              Pincode.findByPincode(formattedMsg, function (err, address) {
-
-								if (err) {
-									sendMessage(senderId, {text: "error occured while search"});
-								} else if (address === null){
-
-                  //save the requested pincode in db
-									let newPincode = new Pincode({
-										pincode: formattedMsg
-									});
-
-									Pincode.addPincode(newPincode, function (newPincode, err) {
-										if (!err) {
-											sendMessage(senderId, {text: "some error occured while proccesing your request"});
-										} else {
-											sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
-										}
-									});
-								} else {
-                  //requested pincode is already there but no address
-									//sendMessage(senderId, {text: question['question']});
-									if (!address['address']) {
-										sendMessage(senderId, {text: "we dont have address for this pin in our db"});
-									} else {
-										sendMessage(senderId, {text: address['address']});
-									}
-								}
-							});
+              // Pincode.findByPincode(formattedMsg, function (err, address) {
+              //
+							// 	if (err) {
+							// 		sendMessage(senderId, {text: "error occured while search"});
+							// 	} else if (address === null){
+              //
+              //     //save the requested pincode in db
+							// 		let newPincode = new Pincode({
+							// 			pincode: formattedMsg
+							// 		});
+              //
+							// 		Pincode.addPincode(newPincode, function (newPincode, err) {
+							// 			if (!err) {
+							// 				sendMessage(senderId, {text: "some error occured while proccesing your request"});
+							// 			} else {
+							// 				sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
+							// 			}
+							// 		});
+							// 	} else {
+              //     //requested pincode is already there but no address
+							// 		//sendMessage(senderId, {text: question['question']});
+							// 		if (!address['address']) {
+							// 			sendMessage(senderId, {text: "we dont have address for this pin in our db"});
+							// 		} else {
+							// 			sendMessage(senderId, {text: address['address']});
+							// 		}
+							// 	}
+							// });
 
 						}
         } else if (message.attachments) {
