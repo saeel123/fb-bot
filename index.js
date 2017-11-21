@@ -148,59 +148,59 @@ function processMessage(event) {
 						} else {
               //sendMessage(senderId, {text: "find Pincode"});
 
-              switch(formattedMsg)
-              {     case "browse":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
+            //   switch(formattedMsg)
+            //   {     case "browse":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         case "careers":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         case "bussiness":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         default:
+            //                 getMessengerName(senderId, function (res){
+            //                 sendMessage(senderId, me);
+            //   }
+            // }
 
-                    case "careers":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
+              Pincode.findByPincode(formattedMsg, function (err, address) {
 
-                    case "bussiness":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
+								if (err) {
+									sendMessage(senderId, {text: "error occured while search"});
+								} else if (address === null){
 
-                    default:
-                            getMessengerName(senderId, function (res){
-                            sendMessage(senderId, me);
-              }
-            }
+                  //save the requested pincode in db
+									let newPincode = new Pincode({
+										pincode: formattedMsg
+									});
 
-              // Pincode.findByPincode(formattedMsg, function (err, address) {
-              //
-							// 	if (err) {
-							// 		sendMessage(senderId, {text: "error occured while search"});
-							// 	} else if (address === null){
-              //
-              //     //save the requested pincode in db
-							// 		let newPincode = new Pincode({
-							// 			pincode: formattedMsg
-							// 		});
-              //
-							// 		Pincode.addPincode(newPincode, function (newPincode, err) {
-							// 			if (!err) {
-							// 				sendMessage(senderId, {text: "some error occured while proccesing your request"});
-							// 			} else {
-							// 				sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
-							// 			}
-							// 		});
-							// 	} else {
-              //     //requested pincode is already there but no address
-							// 		//sendMessage(senderId, {text: question['question']});
-							// 		if (!address['address']) {
-							// 			sendMessage(senderId, {text: "we dont have address for this pin in our db"});
-							// 		} else {
-							// 			sendMessage(senderId, {text: address['address']});
-							// 		}
-							// 	}
-							// });
+									Pincode.addPincode(newPincode, function (newPincode, err) {
+										if (!err) {
+											sendMessage(senderId, {text: "some error occured while proccesing your request"});
+										} else {
+											sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
+										}
+									});
+								} else {
+                  //requested pincode is already there but no address
+									//sendMessage(senderId, {text: question['question']});
+									if (!address['address']) {
+										sendMessage(senderId, {text: "we dont have address for this pin in our db"});
+									} else {
+										sendMessage(senderId, {text: address['address']});
+									}
+								}
+							});
 
 						}
         } else if (message.attachments) {
