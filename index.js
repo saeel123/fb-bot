@@ -148,13 +148,13 @@ function processMessage(event) {
 						} else {
 
               if (formattedMsg === "bussiness") {
-                sendMessage(senderId, {text: "Send us an email on contact@helixtech.co"});
+                sendMessage(senderId, {text: "Send us an email on startups@helixtech.co"});
               } else if (formattedMsg === "careers") {
                 sendMessage(senderId, {text: "Drop your CV at careers@helixtech.co"});
               } else if (formattedMsg === "browse") {
                 sendMessage(senderId, {text: "Happy Browsing"});
               } else {
-                sendMessage(senderId, {text: "We will get back to you"});
+                sendMessage(senderId, me);
               }
 
               //sendMessage(senderId, {text: "find Pincode"});
