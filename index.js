@@ -118,22 +118,13 @@ function processMessage(event) {
                       quick_replies: [
                           {
                               "content_type": "text",
-                              "title": "Search Job",
-                              "payload": "JOB",
-                              "url":"http://www.careers.helixtech.co"
-
+                              "title": "Bussiness",
+                              "payload": "hi"
                           },
                           {
                               "content_type": "text",
-                              "title": "Build an App",
-                              "payload": "BUILD_APP",
-                              "url":"http://www.helixtech.co/"
-                          },
-                          {
-                              "content_type": "text",
-                              "title": "Browsing",
-                              "payload": "SURF",
-                              "url":"http://www.helixtech.co/"
+                              "title": "403517",
+                              "payload": "403517"
                           }
                       ]
                     };
