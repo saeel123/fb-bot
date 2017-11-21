@@ -119,14 +119,24 @@ function processMessage(event) {
                           {
                               "content_type": "text",
                               "title": "Bussiness",
-                              "payload": "hi",
-                              "url":"http://www.careers.helixtech.co"
+                              "payload": "hi"
                           },
                           {
                               "content_type": "text",
                               "title": "403517",
                               "payload": "403517",
-                              "url":"http://www.careers.helixtech.co"
+                              "attachments": [
+                                                {
+                                                  "title": "Facebook HQ",
+                                                  "url": "https://www.facebook.com/l.php?u=https%....5-7Ocxrmg",
+                                                  "type": "location",
+                                                  "payload": {
+                                                    "coordinates": {
+                                                      "lat": 37.483872693672,
+                                                      "long": -122.14900441942
+                                                    }
+                                                  }
+                                                } ]
                           }
                       ]
                     };
