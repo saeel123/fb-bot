@@ -140,7 +140,7 @@ function processMessage(event) {
         if (message.text) {
 						var formattedMsg = message.text.toLowerCase().trim();
 
-						if (formattedMsg === "hi" ) {
+						if (formattedMsg === "hi"  ) {
 							getMessengerName(senderId, function (res) {
 								sendMessage(senderId, me);
 							});
@@ -148,30 +148,30 @@ function processMessage(event) {
 						} else {
               //sendMessage(senderId, {text: "find Pincode"});
 
-              switch(formattedMsg)
-              {     case "browse":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
-
-                    case "careers":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
-
-                    case "bussiness":
-                              getMessengerName(senderId, function (res){
-                              sendMessage(senderId, me);
-                            });
-                            break;
-
-                    default:
-                            getMessengerName(senderId, function (res){
-                            sendMessage(senderId, me);
-              }
-            }
+            //   switch(formattedMsg)
+            //   {     case "browse":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         case "careers":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         case "bussiness":
+            //                   getMessengerName(senderId, function (res){
+            //                   sendMessage(senderId, me);
+            //                 });
+            //                 break;
+            //
+            //         default:
+            //                 getMessengerName(senderId, function (res){
+            //                 sendMessage(senderId, me);
+            //   }
+            // }
 
               // Pincode.findByPincode(formattedMsg, function (err, address) {
               //
@@ -201,6 +201,11 @@ function processMessage(event) {
 							// 		}
 							// 	}
 							// });
+
+
+              // if (true) {
+              //
+              // }
 
 						}
         } else if (message.attachments) {
