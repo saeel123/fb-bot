@@ -86,7 +86,9 @@ function processPostback(event) {
     }
 }
 
-function getMessengerName(senderId, callback) {
+function getMessengerName(senderId, callback) {Books
+ALL APPS
+
 
 	request({
 			url: "https://graph.facebook.com/v2.6/" + senderId,
@@ -114,17 +116,26 @@ function processMessage(event) {
         var senderId = event.sender.id;
 
         let me = {
-                      text: "Hi, How we can help you?",
+                      text: "Hi, Are yo here to?",
                       quick_replies: [
                           {
                               "content_type": "text",
-                              "title": "Bussiness",
-                              "payload": "hi"
+                              "title": "Search Job",
+                              "payload": "JOB",
+                              "url":"http://www.careers.helixtech.co"
+
                           },
                           {
                               "content_type": "text",
-                              "title": "403517",
-                              "payload": "403517"
+                              "title": "Build an App",
+                              "payload": "BUILD_APP",
+                              "url":"http://www.helixtech.co/"
+                          },
+                          {
+                              "content_type": "text",
+                              "title": "Browsing",
+                              "payload": "SURF",
+                              "url":"http://www.helixtech.co/"
                           }
                       ]
                     };
@@ -135,62 +146,47 @@ function processMessage(event) {
         if (message.text) {
 						var formattedMsg = message.text.toLowerCase().trim();
 
-						if (formattedMsg === "hi" ) {
-							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, me);
-							});
+						// if (formattedMsg === "hi" ) {
+						// 	getMessengerName(senderId, function (res) {
+						// 		sendMessage(senderId, me);
+						// 	});
+            //
+						// }
+switch(formattedMsg)
+{     case "hi":
+                getMessengerName(senderId, function (res){
+                sendMessage(senderId, me);
+              });
+              break;
 
-						} else {
-              //sendMessage(senderId, {text: "find Pincode"});
+      case "Search Job":
+                getMessengerName(senderId, function (res){
+                sendMessage(senderId, me);
+              });
+              break;
 
-              Pincode.findByPincode(formattedMsg, function (err, address) {
+      case "Build an App":
+                getMessengerName(senderId, function (res){
+                sendMessage(senderId, me);
+              });
+              break;
 
-								if (err) {
-									sendMessage(senderId, {text: "error occured while search"});
-								} else if (address === null){
+      case "Browsing":
+                getMessengerName(senderId, function (res){
+                sendMessage(senderId, me);
+              });
+              break;
 
-                  //save the requested pincode in db
-									let newPincode = new Pincode({
-										pincode: formattedMsg
-									});
+      default:
+              getMessengerName(senderId, function (res){
+              sendMessage(senderId, me);
+}
 
-									Pincode.addPincode(newPincode, function (newPincode, err) {
-										if (!err) {
-											sendMessage(senderId, {text: "some error occured while proccesing your request"});
-										} else {
-											sendMessage(senderId, {text: "we dint find that pin in our db. we proccssed your request"});
-										}
-									});
-								} else {
-                  //requested pincode is already there but no address
-									//sendMessage(senderId, {text: question['question']});
-									if (!address['address']) {
-										sendMessage(senderId, {text: "we dont have address for this pin in our db"});
-									} else {
-										sendMessage(senderId, {text: address['address']});
-									}
-								}
-							});
-
-						}
-        } else if (message.attachments) {
-            sendMessage(senderId, {text: "Sorry, I don't understand your request."});
         }
     }
 }
 
 
-function getPincodeAddress(userId, pincode) {
-
-    Pincode.findByPincode(pincode, function(err, address) {
-        if(err) {
-            sendMessage(userId, {text: "Something went wrong. Try again"});
-        } else {
-            sendMessage(userId, {text: address});
-        }
-    });
-
-}
 
 
 
