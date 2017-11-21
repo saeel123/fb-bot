@@ -76,7 +76,7 @@ function processPostback(event) {
                 name = bodyObj.first_name;
                 greeting = "Hi " + name + ". ";
             }
-            var message = greeting + "We are people who shape your story.";
+            var message = greeting + "Welcome to Helix Tech BOT";
             sendMessage(senderId, {text: message});
         });
     } else if (payload === "Correct") {
@@ -114,7 +114,7 @@ function processMessage(event) {
         var senderId = event.sender.id;
 
         let me = {
-                      text: "Hi, How we can help you?",
+                      text: "Are you looking for",
                       quick_replies: [
                           {
                               "content_type": "text",
@@ -148,11 +148,11 @@ function processMessage(event) {
 						} else {
 
               if (formattedMsg === "bussiness") {
-                sendMessage(senderId, {text: "Bussiness information"});
+                sendMessage(senderId, {text: "Send us an email on contact@helixtech.co"});
               } else if (formattedMsg === "careers") {
-                sendMessage(senderId, {text: "Careers information"});
+                sendMessage(senderId, {text: "Drop your CV at careers@helixtech.co"});
               } else if (formattedMsg === "browse") {
-                sendMessage(senderId, {text: "Browse information"});
+                sendMessage(senderId, {text: "Happy Browsing"});
               } else {
                 sendMessage(senderId, {text: "We will get back to you"});
               }
