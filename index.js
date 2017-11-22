@@ -131,23 +131,7 @@ function processMessage(event) {
                               "title": "Browse",
                               "payload": "browse"
                           }
-                      ],
-
-                      "persistent_menu":[{
-                                    "call_to_actions":[
-                                      {
-                                        "type":"postback",
-                                        "title":"Pay Bill",
-                                        "payload":"PAYBILL_PAYLOAD"
-                                      },
-                                      {
-                                        "type":"web_url",
-                                        "title":"Latest News",
-                                        "url":"http://petershats.parseapp.com/hat-news",
-                                        "webview_height_ratio":"full"
-                                      }
-                                    ]
-                                  }]
+                      ]
                     };
 
         console.log("Received message from senderId: " + senderId);
