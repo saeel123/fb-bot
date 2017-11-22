@@ -74,7 +74,7 @@ function processPostback(event) {
             } else {
                 var bodyObj = JSON.parse(body);
                 name = bodyObj.first_name;
-                greeting = "Hello " + name + ". ";
+                greeting = "Hi " + name + ". ";
             }
             var message = greeting + "Welcome to Helix Tech BOT";
             sendMessage(senderId, {text: message});
