@@ -189,7 +189,7 @@ function processMessage(event) {
                 sendMessage(senderId,mec);
               } else {
               //  sendGenericMessage(senderId, mec);
-                sendMessage(senderId, me);
+                sendMessage(senderId, mec);
 
               }
 
