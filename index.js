@@ -113,10 +113,7 @@ function processMessage(event) {
         var message = event.message;
         var senderId = event.sender.id;
 
-        console.log("*************");
-        console.log(event);
-        console.log("*************");
-        return false;
+
 
 
         let reply1 = {
@@ -460,6 +457,12 @@ function processMessage(event) {
 						} else {
               console.log("formattedMsg");
               console.log(formattedMsg);
+
+              console.log("*************");
+              console.log(event);
+              console.log(message);
+              console.log("*************");
+              return false;
 
               return formattedMsg;
 
