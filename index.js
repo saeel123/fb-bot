@@ -510,7 +510,7 @@ var pay_load = quickMessage.payload;
                             sendMessage(senderId,reply17);
                                 break;
                                 case "frame":
-                              sendMessage(senderId,{text: "Would you like to submit?"});
+                              sendMessage(senderId,{text: "Please submit your email Id. We'll get back to you soon"});
                                   break;
 
                 default:
