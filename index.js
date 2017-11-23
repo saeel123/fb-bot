@@ -456,7 +456,7 @@ function processMessage(event) {
 							});
 						} else {
 
-              var quickMessage = message.quick_reply.payload.toLowerCase().trim();
+              var quickMessage = message.quick_reply;
 
 
               console.log("formattedMsg");
