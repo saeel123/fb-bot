@@ -135,8 +135,7 @@ function processMessage(event) {
                     };
 
         let mec = {
-          text:"Hiii",
-        attachment: {
+          "attachment": {
       			"type": "template",
       			"payload": {
       				"template_type": "generic",
