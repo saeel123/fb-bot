@@ -113,6 +113,12 @@ function processMessage(event) {
         var message = event.message;
         var senderId = event.sender.id;
 
+        console.log("*************");
+        console.log(event);
+        console.log("*************");
+        return false;
+
+
         let reply1 = {
                       text: "What type of app are you building?",
                       quick_replies: [
