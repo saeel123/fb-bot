@@ -83,27 +83,21 @@ function sendGenericMessage(sender) {
 			"type": "template",
 			"payload": {
 				"template_type": "generic",
-				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+				"elements": [ {
+					"title": "Business",
+					"image_url": "http://westudy.in/article/images/3.jpg",
+          "buttons": [{
+            "type": "web_url",
+            "url": "http://www.startups@helixtech.co/",
+            "title": "Our Link"
+          }],
+				},{
+					"title": "Careers",
+					"image_url": "https://www.wingscreations.in/wp-content/uploads/2016/04/Apply-Careers-2.png",
 					"buttons": [{
 						"type": "web_url",
-						"url": "https://www.messenger.com",
-						"title": "web url"
-					}, {
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
-					}],
-				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
+						"url": "http://www.careers.helixtech.co/",
+						"title": "Our Link"
 					}],
 				}]
 			}
