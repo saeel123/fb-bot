@@ -169,15 +169,19 @@ function processMessage(event) {
 								sendMessage(senderId, reply1);
 							});
 						} else {
-              if (formattedMsg === "platform") {
-                sendMessage(senderId,reply2);
-              } else if (formattedMsg === "careers") {
-                sendMessage(senderId,reply1);
-              } else if (formattedMsg === "platform") {
-                sendMessage(senderId,reply2);
-              } else {
-                sendMessage(senderId, {text: "Will get back to you soon"});
-              }
+              console.log("formattedMsg");
+              console.log(formattedMsg);
+              sendMessage(senderId,reply2);
+
+              // if (formattedMsg === "platform") {
+              //   sendMessage(senderId,reply2);
+              // } else if (formattedMsg === "careers") {
+              //   sendMessage(senderId,reply1);
+              // } else if (formattedMsg === "platform") {
+              //   sendMessage(senderId,reply2);
+              // } else {
+              //   sendMessage(senderId, {text: "Will get back to you soon"});
+              // }
 						}
         } else if (message.attachments) {
             sendMessage(senderId, {text: "Sorry, I don't understand your request."});
