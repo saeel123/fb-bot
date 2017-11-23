@@ -114,24 +114,29 @@ function processMessage(event) {
         var senderId = event.sender.id;
 
         let me = {
-                      text: "Are you looking for",
-                      quick_replies: [
-                          {
-                              "content_type": "text",
-                              "title": "Bussiness",
-                              "payload": "bussiness"
-                          },
-                          {
-                              "content_type": "text",
-                              "title": "Careers",
-                              "payload": "careers"
-                          },
-                          {
-                              "content_type": "text",
-                              "title": "Browse",
-                              "payload": "browse"
-                          }
-                      ]
+          "attachment": {
+            "type": "template",
+            "payload": {
+              "template_type": "generic",
+              "elements": [ {
+                "title": "Business",
+                "image_url": "http://westudy.in/article/images/3.jpg",
+                "buttons": [{
+                  "type": "web_url",
+                  "url": "http://www.startups@helixtech.co/",
+                  "title": "Our Link"
+                }],
+              },{
+                "title": "Careers",
+                "image_url": "https://www.wingscreations.in/wp-content/uploads/2016/04/Apply-Careers-2.png",
+                "buttons": [{
+                  "type": "web_url",
+                  "url": "http://www.careers.helixtech.co/",
+                  "title": "Our Link"
+                }],
+              }]
+            }
+          }
                     };
 
         console.log("Received message from senderId: " + senderId);
