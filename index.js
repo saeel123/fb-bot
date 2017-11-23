@@ -454,7 +454,12 @@ function processMessage(event) {
 							getMessengerName(senderId, function (res) {
 								sendMessage(senderId, reply1);
 							});
-						} else {
+						} else if (formattedMsg !== "") {
+              getMessengerName(senderId, function (res) {
+                sendMessage(senderId, reply1);
+              });
+            }
+            else{
 
               var quickMessage = message.quick_reply;
 var pay_load = quickMessage.payload;
@@ -513,8 +518,6 @@ var pay_load = quickMessage.payload;
                               sendMessage(senderId,{text: "Please submit your email Id. We'll get back to you soon"});
                                   break;
 
-                default:
-                sendMessage(senderId,reply1);
               }
 
               // if (formattedMsg === "platform") {
