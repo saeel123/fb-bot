@@ -113,63 +113,53 @@ function processMessage(event) {
         var message = event.message;
         var senderId = event.sender.id;
 
-        let me = {
-                      text: "Are you looking for",
+        let reply1 = {
+                      text: "What type of app are you building?",
                       quick_replies: [
                           {
                               "content_type": "text",
-                              "title": "Bussiness",
-                              "payload": "bussiness"
+                              "title": "Android",
+                              "payload": "platform"
                           },
                           {
                               "content_type": "text",
-                              "title": "Careers",
-                              "payload": "careers"
+                              "title": "iOS",
+                              "payload": "platform"
                           },
                           {
                               "content_type": "text",
-                              "title": "Browse",
-                              "payload": "browse"
+                              "title": "Both",
+                              "payload": "platform"
                           }
                       ]
                     };
 
-        let mec = {
-          "attachment": {
-      			"type": "template",
-      			"payload": {
-      				"template_type": "generic",
-      				"elements": [ {
-      					"title": "Business",
-      					"image_url": "http://westudy.in/article/images/3.jpg",
-                "buttons": [{
-                  "type": "web_url",
-                  "url": "http://www.startups@helixtech.co/",
-                  "title": "Proceed"
-                }],
-      				},{
-      					"title": "Careers",
-      					"image_url": "https://www.wingscreations.in/wp-content/uploads/2016/04/Apply-Careers-2.png",
-      					"buttons": [{
-      						"type": "web_url",
-      						"url": "http://www.careers.helixtech.co/",
-      						"title": "Click Here"
-      					}],
-      				},{
-      					"title": "About Us",
-      					"image_url": "https://media.licdn.com/media/p/1/005/015/235/13b07d8.png",
-      					"buttons": [{
-      						"type": "web_url",
-      						"url": "http://www.helixtech.co/",
-      						"title": "Browse"
-      					}],
-      				}]
-      			}
-      		}
-        };
+                    let reply2 = {
+                                  text: "Do people have to login?",
+                                  quick_replies: [
+                                      {
+                                          "content_type": "text",
+                                          "title": "Email",
+                                          "payload": "login"
+                                      },
+                                      {
+                                          "content_type": "text",
+                                          "title": "Social",
+                                          "payload": "login"
+                                      },
+                                      {
+                                          "content_type": "text",
+                                          "title": "Phone Number",
+                                          "payload": "login"
+                                      },
+                                      {
+                                          "content_type": "text",
+                                          "title": "No, not required",
+                                          "payload": "login"
+                                      }
+                                  ]
+                                };
 
-        console.log("Received message from senderId: " + senderId);
-        console.log("Message is: " + JSON.stringify(message));
 
         if (message.text) {
 						var formattedMsg = message.text.toLowerCase().trim();
@@ -178,21 +168,16 @@ function processMessage(event) {
 							getMessengerName(senderId, function (res) {
 								sendMessage(senderId, mec);
 							});
-
 						} else {
-
-              if (formattedMsg === "bussiness") {
-                sendMessage(senderId,mec);
+              if (formattedMsg === "login") {
+                sendMessage(senderId,reply2);
               } else if (formattedMsg === "careers") {
-                sendMessage(senderId,mec);
-              } else if (formattedMsg === "browse") {
-                sendMessage(senderId,mec);
+                sendMessage(senderId,reply1);
+              } else if (formattedMsg === "platform") {
+                sendMessage(senderId,reply2);
               } else {
-              //  sendGenericMessage(senderId, mec);
-                sendMessage(senderId, mec);
-
+                sendMessage(senderId, {text: "Will get back to you soon"});
               }
-
 						}
         } else if (message.attachments) {
             sendMessage(senderId, {text: "Sorry, I don't understand your request."});
@@ -200,62 +185,7 @@ function processMessage(event) {
     }
 }
 
-function sendGenericMessage(recipientId, message) {
-	let messageData = {
-		"attachment": {
-			"type": "template",
-			"payload": {
-				"template_type": "generic",
-				"elements": [ {
-					"title": "Business",
-					"image_url": "http://westudy.in/article/images/3.jpg",
-          "buttons": [{
-            "type": "web_url",
-            "url": "http://www.startups@helixtech.co/",
-            "title": "Proceed"
-          }],
-				},{
-					"title": "Careers",
-					"image_url": "https://www.wingscreations.in/wp-content/uploads/2016/04/Apply-Careers-2.png",
-					"buttons": [{
-						"type": "web_url",
-						"url": "http://www.careers.helixtech.co/",
-						"title": "Click Here"
-					}],
-				},{
-					"title": "About Us",
-					"image_url": "https://media.licdn.com/media/p/1/005/015/235/13b07d8.png",
-					"buttons": [{
-						"type": "web_url",
-						"url": "http://www.helixtech.co/",
-						"title": "Browse"
-					}],
-				}]
-			}
-		}
-	}
-
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token:process.env.PAGE_ACCESS_TOKEN},
-    method: 'POST',
-    json: {
-      recipient: {id:recipientId},
-      message: message,
-    }
-  }, function(error, response, body) {
-    if (error) {
-      console.log('Error sending messages: ', error)
-    } else if (response.error) {
-      console.log('Error: ', response.body.error)
-    }
-  });
-
-
-
-}
 function getPincodeAddress(userId, pincode) {
-
     Pincode.findByPincode(pincode, function(err, address) {
         if(err) {
             sendMessage(userId, {text: "Something went wrong. Try again"});
