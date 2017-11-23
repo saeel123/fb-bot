@@ -148,13 +148,13 @@ function processMessage(event) {
 						} else {
 
               if (formattedMsg === "bussiness") {
-                sendGenericMessage(senderId);
+                sendGenericMessage(senderId,me);
               } else if (formattedMsg === "careers") {
-                sendGenericMessage(senderId);
+                sendGenericMessage(senderId,me);
               } else if (formattedMsg === "browse") {
-                sendGenericMessage(senderId);
+                sendGenericMessage(senderId,me);
               } else {
-                sendGenericMessage(senderId, me);
+                sendMessage(senderId, me);
               }
 
 						}
@@ -164,7 +164,7 @@ function processMessage(event) {
     }
 }
 
-function sendGenericMessage(senderId) {
+function sendGenericMessage(recipientId, message) {
 	let messageData = {
 		"attachment": {
 			"type": "template",
@@ -190,19 +190,25 @@ function sendGenericMessage(senderId) {
 			}
 		}
 	}
+
   request({
-      url: "https://graph.facebook.com/v2.6/me/messages",
-      qs: {access_token: process.env.PAGE_ACCESS_TOKEN},
-      method: "POST",
-      json: {
-          recipient: {id: recipientId},
-          message: message,
-      }
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token:process.env.PAGE_ACCESS_TOKEN},
+    method: 'POST',
+    json: {
+      recipient: {id:recipientId},
+      message: message,
+    }
   }, function(error, response, body) {
-      if (error) {
-          console.log("Error sending message: " + response.error);
-      }
+    if (error) {
+      console.log('Error sending messages: ', error)
+    } else if (response.error) {
+      console.log('Error: ', response.body.error)
+    }
   });
+
+
+
 }
 function getPincodeAddress(userId, pincode) {
 
