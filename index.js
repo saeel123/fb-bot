@@ -135,7 +135,6 @@ function processMessage(event) {
                     };
 
         let mec = {
-          text: "Are you looking for",
           "attachment": {
       			"type": "template",
       			"payload": {
