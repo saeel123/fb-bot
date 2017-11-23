@@ -166,14 +166,14 @@ function processMessage(event) {
 						} else {
 
               if (formattedMsg === "bussiness") {
-                sendMessage(senderId,me);
+                sendGenericMessage(senderId, mec);
               } else if (formattedMsg === "careers") {
-                sendMessage(senderId,me);
+                sendGenericMessage(senderId, mec);
               } else if (formattedMsg === "browse") {
-                sendMessage(senderId,me);
+                sendGenericMessage(senderId, mec);
               } else {
                 sendGenericMessage(senderId, mec);
-                sendMessage(senderId, me);
+                //sendMessage(senderId, me);
 
               }
 
@@ -186,7 +186,6 @@ function processMessage(event) {
 
 function sendGenericMessage(recipientId, message) {
 	let messageData = {
-    "text":"Are you looking for",
 		"attachment": {
 			"type": "template",
 			"payload": {
