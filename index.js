@@ -514,7 +514,7 @@ var pay_load = quickMessage.payload;
                                   break;
 
                 default:
-                sendMessage(senderId, {text: "Will get back to you soon"});
+                sendMessage(senderId,reply1);
               }
 
               // if (formattedMsg === "platform") {
