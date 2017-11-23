@@ -458,17 +458,11 @@ function processMessage(event) {
 
               var quickMessage = message.quick_reply;
 
-
-              console.log("formattedMsg");
-              console.log(formattedMsg);
-
               console.log("*************");
-              console.log(quickMessage);
+              console.log(quickMessage.payload);
               console.log(quickMessage);
               console.log("*************");
               return false;
-
-              return formattedMsg;
 
               switch (formattedMsg) {
                 case "android":
