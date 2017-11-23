@@ -171,7 +171,16 @@ function processMessage(event) {
 						} else {
               console.log("formattedMsg");
               console.log(formattedMsg);
-              sendMessage(senderId,reply2);
+
+              switch (formattedMsg) {
+                case "android":
+                case "ios":
+                case "both":
+                 sendMessage(senderId,reply2);
+                  break;
+                default:
+                sendMessage(senderId, {text: "Will get back to you soon"});
+              }
 
               // if (formattedMsg === "platform") {
               //   sendMessage(senderId,reply2);
