@@ -80,35 +80,50 @@ function sendTextMessage(sender, text) {
 
 function sendGenericMessage(sender) {
 	let messageData = {
-		"attachment": {
-			"type": "template",
-			"payload": {
-				"template_type": "generic",
-				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-					"buttons": [{
-						"type": "web_url",
-						"url": "https://www.messenger.com",
-						"title": "web url"
-					}, {
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
-					}],
-				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
-					}],
-				}]
-			}
-		}
+    "persistent_menu":[
+        {
+          "locale":"default",
+          "composer_input_disabled":true,
+          "call_to_actions":[
+            {
+              "title":"Home",
+              "type":"postback",
+              "payload":"HOME"
+            },
+            {
+              "title":"Nested Menu Example",
+              "type":"nested",
+              "call_to_actions":[
+                {
+                  "title":"Who am I",
+                  "type":"postback",
+                  "payload":"WHO"
+                },
+                {
+                  "title":"Joke",
+                  "type":"postback",
+                  "payload":"joke"
+                },
+                {
+                  "title":"Contact Info",
+                  "type":"postback",
+                  "payload":"CONTACT"
+                }
+              ]
+            },
+            {
+              "type":"web_url",
+              "title":"Latest News",
+              "url":"http://foxnews.com",
+              "webview_height_ratio":"full"
+            }
+          ]
+        },
+        {
+          "locale":"zh_CN",
+          "composer_input_disabled":false
+        }
+]
 	}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
