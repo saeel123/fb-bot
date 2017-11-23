@@ -166,7 +166,7 @@ function processMessage(event) {
 
 						if (formattedMsg === "hi"  ) {
 							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, mec);
+								sendMessage(senderId, reply1);
 							});
 						} else {
               if (formattedMsg === "login") {
