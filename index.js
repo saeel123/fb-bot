@@ -135,17 +135,34 @@ function processMessage(event) {
                     };
 
         let mec = {
+          text: "Are you looking for",
           "attachment": {
       			"type": "template",
       			"payload": {
       				"template_type": "generic",
-      				"elements": [{
+      				"elements": [ {
+      					"title": "Business",
+      					"image_url": "http://westudy.in/article/images/3.jpg",
+                "buttons": [{
+                  "type": "web_url",
+                  "url": "http://www.startups@helixtech.co/",
+                  "title": "Proceed"
+                }],
+      				},{
       					"title": "Careers",
       					"image_url": "https://www.wingscreations.in/wp-content/uploads/2016/04/Apply-Careers-2.png",
       					"buttons": [{
       						"type": "web_url",
       						"url": "http://www.careers.helixtech.co/",
-      						"title": "Our Link"
+      						"title": "Click Here"
+      					}],
+      				},{
+      					"title": "About Us",
+      					"image_url": "https://media.licdn.com/media/p/1/005/015/235/13b07d8.png",
+      					"buttons": [{
+      						"type": "web_url",
+      						"url": "http://www.helixtech.co/",
+      						"title": "Browse"
       					}],
       				}]
       			}
@@ -160,20 +177,20 @@ function processMessage(event) {
 
 						if (formattedMsg === "hi"  ) {
 							getMessengerName(senderId, function (res) {
-								sendMessage(senderId, me);
+								sendMessage(senderId, mec);
 							});
 
 						} else {
 
               if (formattedMsg === "bussiness") {
-                sendGenericMessage(senderId, mec);
+                sendMessage(senderId,mec);
               } else if (formattedMsg === "careers") {
-                sendGenericMessage(senderId, mec);
+                sendMessage(senderId,mec);
               } else if (formattedMsg === "browse") {
-                sendGenericMessage(senderId, mec);
+                sendMessage(senderId,mec);
               } else {
-                sendGenericMessage(senderId, mec);
-                //sendMessage(senderId, me);
+              //  sendGenericMessage(senderId, mec);
+                sendMessage(senderId, me);
 
               }
 
