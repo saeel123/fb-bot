@@ -169,7 +169,7 @@ function processMessage(event) {
 								sendMessage(senderId, reply1);
 							});
 						} else {
-              if (formattedMsg === "login") {
+              if (formattedMsg === "platform") {
                 sendMessage(senderId,reply2);
               } else if (formattedMsg === "careers") {
                 sendMessage(senderId,reply1);
