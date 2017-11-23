@@ -455,12 +455,16 @@ function processMessage(event) {
 								sendMessage(senderId, reply1);
 							});
 						} else {
+
+              var quickMessage = message.quick_reply.payload.toLowerCase().trim();
+
+
               console.log("formattedMsg");
               console.log(formattedMsg);
 
               console.log("*************");
-              console.log(event);
-              console.log(message);
+              console.log(quickMessage);
+              console.log(quickMessage);
               console.log("*************");
               return false;
 
