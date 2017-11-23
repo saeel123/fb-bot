@@ -186,6 +186,7 @@ function processMessage(event) {
 
 function sendGenericMessage(recipientId, message) {
 	let messageData = {
+    "text":"Are you looking for",
 		"attachment": {
 			"type": "template",
 			"payload": {
@@ -196,7 +197,7 @@ function sendGenericMessage(recipientId, message) {
           "buttons": [{
             "type": "web_url",
             "url": "http://www.startups@helixtech.co/",
-            "title": "Our Link"
+            "title": "Proceed"
           }],
 				},{
 					"title": "Careers",
@@ -204,7 +205,15 @@ function sendGenericMessage(recipientId, message) {
 					"buttons": [{
 						"type": "web_url",
 						"url": "http://www.careers.helixtech.co/",
-						"title": "Our Link"
+						"title": "Click Here"
+					}],
+				},{
+					"title": "About Us",
+					"image_url": "https://media.licdn.com/media/p/1/005/015/235/13b07d8.png",
+					"buttons": [{
+						"type": "web_url",
+						"url": "http://www.helixtech.co/",
+						"title": "Browse"
 					}],
 				}]
 			}
@@ -241,12 +250,6 @@ function getPincodeAddress(userId, pincode) {
     });
 
 }
-
-
-
-
-
-
 // sends message to user
 function sendMessage(recipientId, message) {
     request({
@@ -263,9 +266,6 @@ function sendMessage(recipientId, message) {
         }
     });
 }
-
-
-
 // Spin up the server
 app.listen(PORT, function() {
 	console.log('running on port', PORT);
