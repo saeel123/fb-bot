@@ -168,12 +168,12 @@ function processMessage(event) {
                                   {
                                       "content_type": "text",
                                       "title": "Yes",
-                                      "payload": "login"
+                                      "payload": "profile"
                                   },
                                   {
                                       "content_type": "text",
                                       "title": "No",
-                                      "payload": "login"
+                                      "payload": "profile"
                                   }
                               ]
                             };
@@ -183,17 +183,17 @@ function processMessage(event) {
                                       {
                                           "content_type": "text",
                                           "title": "Upfront Cost",
-                                          "payload": "login"
+                                          "payload": "money"
                                       },
                                       {
                                           "content_type": "text",
                                           "title": "In-App Purchase",
-                                          "payload": "login"
+                                          "payload": "money"
                                       },
                                       {
                                           "content_type": "text",
                                           "title": "Free",
-                                          "payload": "login"
+                                          "payload": "money"
                                       }
                                   ]
                                 };
@@ -203,12 +203,12 @@ function processMessage(event) {
                                         {
                                             "content_type": "text",
                                             "title": "Yes",
-                                            "payload": "login"
+                                            "payload": "website"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "No",
-                                            "payload": "login"
+                                            "payload": "website"
                                         }
                                     ]
                                   };
@@ -218,12 +218,12 @@ function processMessage(event) {
                                                     {
                                                         "content_type": "text",
                                                         "title": "Yes",
-                                                        "payload": "login"
+                                                        "payload": "app"
                                                     },
                                                     {
                                                         "content_type": "text",
                                                         "title": "No",
-                                                        "payload": "login"
+                                                        "payload": "app"
                                                     }
                                                 ]
                                               };
@@ -233,12 +233,12 @@ function processMessage(event) {
                                                     {
                                                         "content_type": "text",
                                                         "title": "Yes",
-                                                        "payload": "login"
+                                                        "payload": "Hosting"
                                                     },
                                                     {
                                                         "content_type": "text",
                                                         "title": "No",
-                                                        "payload": "login"
+                                                        "payload": "Hosting"
                                                     }
                                                 ]
                                               };
@@ -248,17 +248,17 @@ function processMessage(event) {
                                                 {
                                                     "content_type": "text",
                                                     "title": "Bare-bones",
-                                                    "payload": "login"
+                                                    "payload": "look"
                                                 },
                                                 {
                                                     "content_type": "text",
                                                     "title": "Stock",
-                                                    "payload": "login"
+                                                    "payload": "look"
                                                 },
                                                 {
                                                     "content_type": "text",
                                                     "title": "Beautiful",
-                                                    "payload": "login"
+                                                    "payload": "look"
                                                 }
                                             ]
                                           };
@@ -268,12 +268,12 @@ function processMessage(event) {
                                       {
                                           "content_type": "text",
                                           "title": "Yes, I need an app icon",
-                                          "payload": "login"
+                                          "payload": "icon"
                                       },
                                       {
                                           "content_type": "text",
                                           "title": "No, I don't need an app icon",
-                                          "payload": "login"
+                                          "payload": "icon"
                                       }
                                   ]
                                 };
@@ -283,12 +283,12 @@ function processMessage(event) {
                                       {
                                           "content_type": "text",
                                           "title": "Yes",
-                                          "payload": "login"
+                                          "payload": "advertisements"
                                       },
                                       {
                                           "content_type": "text",
                                           "title": "No",
-                                          "payload": "login"
+                                          "payload": "advertisements"
                                       }
                                   ]
                                 };
@@ -298,17 +298,17 @@ function processMessage(event) {
                                         {
                                             "content_type": "text",
                                             "title": "English (US)",
-                                            "payload": "login"
+                                            "payload": "support"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "Indique Language",
-                                            "payload": "login"
+                                            "payload": "support"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "English (US) + Indique Language/Languages",
-                                            "payload": "login"
+                                            "payload": "support"
                                         }
                                     ]
                                   };
@@ -318,17 +318,17 @@ function processMessage(event) {
                                         {
                                             "content_type": "text",
                                             "title": "Phone",
-                                            "payload": "login"
+                                            "payload": "devices"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "Tablet",
-                                            "payload": "login"
+                                            "payload": "devices"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "Both",
-                                            "payload": "login"
+                                            "payload": "devices"
                                         }
                                     ]
                                   };
@@ -338,17 +338,17 @@ function processMessage(event) {
                                     {
                                         "content_type": "text",
                                         "title": "Portrait",
-                                        "payload": "login"
+                                        "payload": "form"
                                     },
                                     {
                                         "content_type": "text",
                                         "title": "Landscape",
-                                        "payload": "login"
+                                        "payload": "form"
                                     },
                                     {
                                         "content_type": "text",
                                         "title": "Both",
-                                        "payload": "login"
+                                        "payload": "form"
                                     }
                                 ]
                               };
@@ -358,12 +358,12 @@ function processMessage(event) {
                                                         {
                                                             "content_type": "text",
                                                             "title": "Yes",
-                                                            "payload": "login"
+                                                            "payload": "e_website"
                                                         },
                                                         {
                                                             "content_type": "text",
                                                             "title": "No",
-                                                            "payload": "login"
+                                                            "payload": "e_website"
                                                         }
                                                     ]
                                                   };
@@ -374,22 +374,22 @@ function processMessage(event) {
                                           {
                                               "content_type": "text",
                                               "title": "Idea",
-                                              "payload": "login"
+                                              "payload": "stage"
                                           },
                                           {
                                               "content_type": "text",
                                               "title": "Sketches",
-                                              "payload": "login"
+                                              "payload": "stage"
                                           },
                                           {
                                                 "content_type": "text",
                                                 "title": "Development",
-                                                "payload": "login"
+                                                "payload": "stage"
                                             },
                                             {
                                                 "content_type": "text",
                                                 "title": "Prototype",
-                                                "payload": "login"
+                                                "payload": "stage"
                                             }
                                       ]
                                     };
@@ -400,22 +400,22 @@ function processMessage(event) {
                                       {
                                           "content_type": "text",
                                           "title": "Less than US$20000",
-                                          "payload": "login"
+                                          "payload": "budget"
                                       },
                                       {
                                           "content_type": "text",
                                           "title": "US$20000 - US$50000",
-                                          "payload": "login"
+                                          "payload": "budget"
                                       },
                                       {
                                             "content_type": "text",
                                             "title": "US$50000-US$100000",
-                                            "payload": "login"
+                                            "payload": "budget"
                                         },
                                         {
                                             "content_type": "text",
                                             "title": "More than US$100000",
-                                            "payload": "login"
+                                            "payload": "budget"
                                         }
                                   ]
                                 };
@@ -428,22 +428,22 @@ function processMessage(event) {
                                             {
                                                 "content_type": "text",
                                                 "title": "Less than 1 Month",
-                                                "payload": "login"
+                                                "payload": "frame"
                                             },
                                             {
                                                 "content_type": "text",
                                                 "title": "1-2 Months",
-                                                "payload": "login"
+                                                "payload": "frame"
                                             },
                                             {
                                                   "content_type": "text",
                                                   "title": "2-3 Months",
-                                                  "payload": "login"
+                                                  "payload": "frame"
                                               },
                                               {
                                                   "content_type": "text",
                                                   "title": "More than 3 months",
-                                                  "payload": "login"
+                                                  "payload": "frame"
                                               }
                                         ]
                                       };
@@ -457,35 +457,62 @@ function processMessage(event) {
 						} else {
 
               var quickMessage = message.quick_reply;
+var pay_load = quickMessage.payload;
 
-              console.log("*************");
-              console.log(quickMessage.payload);
-              console.log(quickMessage);
-              console.log("*************");
-              return false;
 
-              switch (formattedMsg) {
-                case "android":
-                case "ios":
-                case "both":
-                 sendMessage(senderId,reply2);
+              switch (pay_load) {
+                case "platform":
+              sendMessage(senderId,reply2);
                   break;
-                case "Email":
-                case "Social":
-                case "Phone Number":
-                case "No, not required":
-                 sendMessage(senderId,reply3);
+                case "login":
+           sendMessage(senderId,reply3);
                   break;
-                  case "Yes":
-                  case "No":
-                   sendMessage(senderId,reply4);
+                  case "profile":
+                sendMessage(senderId,reply4);
                     break;
-                  case "Email":
-                  case "Social":
-                  case "Phone Number":
-                  case "No, not required":
-                   sendMessage(senderId,reply5);
+                  case "money":
+                sendMessage(senderId,reply5);
                     break;
+                    case "website":
+                  sendMessage(senderId,reply6);
+                      break;
+                    case "app":
+               sendMessage(senderId,reply7);
+                      break;
+                      case "Hosting":
+                    sendMessage(senderId,reply8);
+                        break;
+                      case "look":
+                    sendMessage(senderId,reply9);
+                        break;
+                        case "icon":
+                      sendMessage(senderId,reply10);
+                          break;
+                        case "advertisements":
+                    sendMessage(senderId,reply11);
+                          break;
+                          case "support":
+                        sendMessage(senderId,reply12);
+                            break;
+                          case "devices":
+                        sendMessage(senderId,reply13);
+                            break;
+                            case "form":
+                          sendMessage(senderId,reply14);
+                              break;
+                            case "e_website":
+                       sendMessage(senderId,reply15);
+                              break;
+                              case "stage":
+                            sendMessage(senderId,reply16);
+                                break;
+                              case "budget":
+                            sendMessage(senderId,reply17);
+                                break;
+                                case "frame":
+                              sendMessage(senderId,{text: "Would you like to submit?"});
+                                  break;
+
                 default:
                 sendMessage(senderId, {text: "Will get back to you soon"});
               }
