@@ -132,8 +132,6 @@ function processMessage(event) {
                               "payload": "browse"
                           }
                       ]
-
-
                     };
 
         console.log("Received message from senderId: " + senderId);
