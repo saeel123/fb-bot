@@ -82,35 +82,15 @@ function sendGenericMessage(sender) {
 	let messageData = {
     "persistent_menu":[
         {
-          "locale":"default",
-          "composer_input_disabled":true,
+    //      "locale":"default",
+          "composer_input_disabled":false,
           "call_to_actions":[
             {
               "title":"Home",
               "type":"postback",
               "payload":"HOME"
             },
-            {
-              "title":"Nested Menu Example",
-              "type":"nested",
-              "call_to_actions":[
-                {
-                  "title":"Who am I",
-                  "type":"postback",
-                  "payload":"WHO"
-                },
-                {
-                  "title":"Joke",
-                  "type":"postback",
-                  "payload":"joke"
-                },
-                {
-                  "title":"Contact Info",
-                  "type":"postback",
-                  "payload":"CONTACT"
-                }
-              ]
-            },
+
             {
               "type":"web_url",
               "title":"Latest News",
@@ -118,11 +98,8 @@ function sendGenericMessage(sender) {
               "webview_height_ratio":"full"
             }
           ]
-        },
-        {
-          "locale":"zh_CN",
-          "composer_input_disabled":false
         }
+
 ]
 	}
 	request({
