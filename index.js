@@ -74,7 +74,7 @@ function processPostback(event) {
             } else {
                 var bodyObj = JSON.parse(body);
                 name = bodyObj.first_name;
-                greeting = "Hi " + name + ". ";
+                greeting = "Hello " + name + ". ";
             }
             var message = greeting + "Welcome to Helix Tech BOT";
             sendMessage(senderId, {text: message});
@@ -132,6 +132,8 @@ function processMessage(event) {
                               "payload": "browse"
                           }
                       ]
+
+
                     };
 
         console.log("Received message from senderId: " + senderId);
@@ -146,6 +148,7 @@ function processMessage(event) {
 							});
 
 						} else {
+
               if (formattedMsg === "bussiness") {
                 sendMessage(senderId, {text: "Send us an email on startups@helixtech.co"});
               } else if (formattedMsg === "careers") {
@@ -231,6 +234,7 @@ function getPincodeAddress(userId, pincode) {
     });
 
 }
+
 
 
 
